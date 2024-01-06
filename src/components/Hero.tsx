@@ -2,9 +2,9 @@ const Hero = () => {
   return (
     <div className='flex w-full flex-col gap-4'>
       {/* Hero text container*/}
-      <div className='w-full p-4 flex flex-col gap-2 justify-center items-start'>
+      <div className='w-full p-4 flex flex-col gap-2 justify-center items-start mt-8'>
         <h1 className='text-5xl text-seashellPeach-50 uppercase'>Greetings!</h1>
-        <p className='text-karry-200 font-light text-xl ml-1'>
+        <p className='text-karry-200 font-light text-base ml-1'>
           I'm not your average code monkey. I'm an alchemist, transforming lines
           of text into pixelated masterpieces. With a dash of HTML, a sprinkle
           of CSS, and a generous helping of Next.js, I sculpt interfaces that
