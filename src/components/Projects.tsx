@@ -1,33 +1,37 @@
 const Projects = () => {
   return (
-    <div className='w-full flex flex-col items-center justify-center mt-4'>
-      <div className='flex  items-center justify-center'>
-        {/* Hero text */}
-        <div className='px-4 flex flex-col gap-2 justify-center items-start w-1/2 h-screen '>
-          <h1 className='text-8xl text-seashellPeach-50 uppercase'>
-            Greetings!
-          </h1>
-          <p className='ml-4 text-karry-200 font-light text-4xl'>
-            I'm not your average code monkey. I'm an alchemist, transforming
-            lines of text into pixelated masterpieces. With a dash of HTML, a
-            sprinkle of CSS, and a generous helping of Next.js, I sculpt
-            interfaces that sing. Think user-friendly symphonies, every click
-            and scroll a harmonious note. My passion? Crafting digital
-            experiences that ignite the human connection. Websites that aren't
-            just functional, they're unforgettable. Websites that make you say
-            "wow" before you even hit enter.
+    <div className='w-full flex text-seashellPeach-50'>
+      {/* Content container */}
+      <div className='flex flex-col gap-2 w-full p-4'>
+        {/* Site image */}
+        <img src='defino.jpg' className='rounded-xl w-full object-contain' />
+        {/* Project description */}
+        <div className='w-full bg-shark-950 rounded-xl flex flex-col  p-4 h-max'>
+          <h1 className='text-4xl font-light uppercase'>Defino</h1>
+          <p className='font-extralight'>
+            Unleash the power of language with Defino, the ultimate online
+            dictionary. Explore over 750,000 words with ease, find precise
+            definitions, and discover unexpected connections. Synonyms,
+            antonyms, and etymology are just a click away, making Defino your
+            perfect companion for writing, learning, or simply expanding your
+            vocabulary. Download now and elevate your language game!
           </p>
-          <p className='text-lavender-300 text-xl font-light italic mt-4 ml-4 line-through'>
-            This bio was crafted with a sprinkle of artificial intelligence.
+          <p className='italic text-lavender-300 mt-4 font-light text-sm'>
+            totally not written by chatGPT
           </p>
+          {/* Links */}
+          <ul className='flex gap-4 self-center flex-1 my-8'>
+            <li>Link</li>
+            <li>Github</li>
+          </ul>
+          {/* Used technology*/}
+          <ul className='flex self-center gap-4 items-center text-center text-sm'>
+            <li className='border px-4 py-1  rounded-full'>React</li>
+            <li className='border px-4 py-1 rounded-full'>Tailwind CSS</li>
+            <li className='border px-4 py-1 rounded-full'>Dictionary API</li>
+          </ul>
         </div>
-        {/* Avatar */}
-        <img
-          src='avatar.png'
-          className='rounded-full bg-flesh-200 max-w-[33%]'
-        />
       </div>
-      {/* Reccomendation Cards */}
     </div>
   );
 };
