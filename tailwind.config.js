@@ -25,6 +25,9 @@ export default {
         charcoal: {
           950: '#020a15',
         },
+        brightGray: {
+          900: '#303A4A',
+        },
       },
     },
   },
