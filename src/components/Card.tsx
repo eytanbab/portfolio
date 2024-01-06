@@ -1,8 +1,6 @@
-import React from 'react';
-
 const Card = () => {
   return (
-    <div className='w-96 h-48  p-4 rounded-2xl bg-shark-950'>
+    <div className='w-96 h-48  p-4 rounded-2xl bg-shark-950 shrink-0'>
       <div className='flex items-center gap-2'>
         <img className='rounded-full h-20 w-20 bg-blue-200' src='avatar.png' />
         <div className='flex flex-col mt-2'>
