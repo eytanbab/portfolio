@@ -10,9 +10,11 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-color: rgb(2, 10, 21);
+  background-position: center;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
