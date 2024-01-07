@@ -1,4 +1,4 @@
-const Card = () => {
+const RecommendationCard = () => {
   return (
     <div className='w-96 h-48  p-4 rounded-2xl bg-shark-950 shrink-0'>
       <div className='flex items-center gap-2'>
@@ -15,4 +15,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default RecommendationCard;
