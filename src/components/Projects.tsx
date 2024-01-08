@@ -8,7 +8,7 @@ const Projects = () => {
   };
 
   return (
-    <div className='flex flex-col gap-2 w-full p-4 text-seashellPeach-50 items-center justify-center gap-4'>
+    <div className='flex flex-col w-full p-4 text-seashellPeach-50 items-center justify-center gap-4'>
       <h1 className='max-w-[570px] lg:max-w-full text-3xl uppercase text-left w-full xl:max-w-7xl xl:text-5xl ml-2'>
         Projects
       </h1>
@@ -46,7 +46,7 @@ const Projects = () => {
               definitions, and discover unexpected connections. Synonyms,
               antonyms, and etymology are just a click away, making Defino your
               perfect companion for writing, learning, or simply expanding your
-              vocabulary. Download now and elevate your language game!
+              vocabulary.
             </p>
             <p className='italic text-lavender-300 mt-4 font-light text-sm'>
               totally not written by chatGPT
@@ -82,7 +82,7 @@ const Projects = () => {
               definitions, and discover unexpected connections. Synonyms,
               antonyms, and etymology are just a click away, making Defino your
               perfect companion for writing, learning, or simply expanding your
-              vocabulary. Download now and elevate your language game!
+              vocabulary.
             </p>
             <p className='italic text-lavender-300 mt-2 font-light text-sm'>
               totally not written by chatGPT
