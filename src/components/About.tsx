@@ -3,7 +3,7 @@ import RecommendationCards from './RecommendationCards';
 
 const About = () => {
   return (
-    <div className='flex flex-col gap-48 items-center lg:mt-24'>
+    <div className='flex flex-col gap-24 items-center '>
       <Hero />
       <RecommendationCards />
     </div>
