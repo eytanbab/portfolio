@@ -1,8 +1,34 @@
+import { motion, useScroll } from 'framer-motion';
+import { RefObject, useEffect, useRef } from 'react';
+
+declare module 'framer-motion' {
+  export function useInView(options?: IntersectionObserverInit): {
+    ref: RefObject<Element>;
+    inView: boolean;
+  };
+}
+
 const RecommendationCards = () => {
+  const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
+  const { scrollY } = useScroll();
+  const isSmallScreen = window.innerWidth < 1024;
+
+  useEffect(() => {
+    if (isSmallScreen && ref.current) {
+      // Ensure ref.current exists before accessing
+      ref.current.style.transform = `translateY(${scrollY.get() * 0.2}px)`;
+    }
+  }, [scrollY, ref, isSmallScreen]);
+
   return (
     <div className='flex gap-4 items-center flex-wrap w-full justify-center px-4'>
       {/* Card content */}
-      <div className='w-96 h-48 p-4 rounded-2xl bg-shark-950 shrink-0 flex flex-col'>
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        className='w-96 h-48 p-4 rounded-2xl bg-shark-950 shrink-0 flex flex-col'
+      >
         <div className='flex items-center gap-2'>
           <img
             className='rounded-full size-20 object-cover bg-blue-200'
@@ -16,9 +42,14 @@ const RecommendationCards = () => {
         <p className='text-karry-200 mt-2 font-extralight italic'>
           Don’t know the guy but it seems he’s the best at whatever he does.
         </p>
-      </div>
+      </motion.div>
       {/* Card content */}
-      <div className='w-96 h-48  p-4 rounded-2xl bg-shark-950 shrink-0'>
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        className='w-96 h-48 p-4 rounded-2xl bg-shark-950 shrink-0 flex flex-col'
+      >
         <div className='flex items-center gap-2'>
           <img
             className='rounded-full size-20 object-cover bg-blue-200'
@@ -32,9 +63,14 @@ const RecommendationCards = () => {
         <p className='text-karry-200 mt-2 font-extralight italic'>
           The best frontend developer I’ve seen.
         </p>
-      </div>
+      </motion.div>
       {/* Card content */}
-      <div className='w-96 h-48  p-4 rounded-2xl bg-shark-950 shrink-0'>
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        className='w-96 h-48 p-4 rounded-2xl bg-shark-950 shrink-0 flex flex-col'
+      >
         <div className='flex items-center gap-2'>
           <img
             className='rounded-full size-20 object-cover bg-blue-200'
@@ -50,9 +86,14 @@ const RecommendationCards = () => {
         <p className='text-karry-200 mt-2 font-extralight italic'>
           This guy is my childhood hero. All my work is inspired by him.
         </p>
-      </div>
+      </motion.div>
       {/* Card content */}
-      <div className='w-96 h-48  p-4 rounded-2xl bg-shark-950 shrink-0'>
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        className='w-96 h-48 p-4 rounded-2xl bg-shark-950 shrink-0 flex flex-col'
+      >
         <div className='flex items-center gap-2'>
           <img
             className='rounded-full size-20 object-cover bg-blue-200'
@@ -68,9 +109,14 @@ const RecommendationCards = () => {
         <p className='text-karry-200 mt-2 font-extralight italic'>
           This dude writes UI like Michelangelo sculpts statues - pure fire!
         </p>
-      </div>
+      </motion.div>
       {/* Card content */}
-      <div className='w-96 h-48  p-4 rounded-2xl bg-shark-950 shrink-0'>
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        className='w-96 h-48 p-4 rounded-2xl bg-shark-950 shrink-0 flex flex-col'
+      >
         <div className='flex items-center gap-2'>
           <img
             className='rounded-full size-20 object-cover bg-blue-200'
@@ -87,7 +133,7 @@ const RecommendationCards = () => {
           This legend taught me everything I know about coding. My coding Yoda,
           my personal Obi-Wan Kenobi.
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 };
