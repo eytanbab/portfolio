@@ -1,3 +1,5 @@
+import Contact from './Contact';
+
 const Hero = () => {
   return (
     <div className='flex w-full flex-col gap-4 items-center justify-center lg:flex-row px-4'>
@@ -19,8 +21,10 @@ const Hero = () => {
         <p className='text-lavender-300 text-base font-light italic mt-4 ml-1 line-through max-w-3xl lg:max-w-xl w-full'>
           This bio was crafted with a sprinkle of artificial intelligence.
         </p>
+        <Contact />
       </div>
       {/* Avatar */}
+
       <img
         src='avatar.png'
         className='rounded-full bg-flesh-200 size-72 self-center md:size-96'
