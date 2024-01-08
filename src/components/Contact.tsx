@@ -4,7 +4,7 @@ import { Mail } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <div className='w-full  text-seashellPeach-50 flex gap-8 items-center mt-8 justify-center'>
+    <div className='w-full  text-seashellPeach-50 flex gap-8 items-center mt-4 justify-center lg:justify-start lg:ml-1'>
       <a href='https://github.com/eytanbab'>
         <Github size={24} />
       </a>
