@@ -11,20 +11,19 @@ declare module 'framer-motion' {
 const RecommendationCards = () => {
   const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
-  const isSmallScreen = window.innerWidth < 1024;
 
   useEffect(() => {
-    if (isSmallScreen && ref.current) {
+    if (window.innerWidth < 1024 && ref.current) {
       // Ensure ref.current exists before accessing
       ref.current.style.transform = `translateY(${scrollY.get() * 0.2}px)`;
     }
-  }, [scrollY, ref, isSmallScreen]);
+  }, [scrollY, ref]);
 
   return (
     <div className='flex gap-4 items-center flex-wrap w-full justify-center px-4'>
       {/* Card content */}
       <motion.div
-        ref={ref}
+        viewport={{ once: true }}
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         className='w-96 h-48 p-4 rounded-2xl bg-shark-950 shrink-0 flex flex-col'
@@ -45,7 +44,7 @@ const RecommendationCards = () => {
       </motion.div>
       {/* Card content */}
       <motion.div
-        ref={ref}
+        viewport={{ once: true }}
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         className='w-96 h-48 p-4 rounded-2xl bg-shark-950 shrink-0 flex flex-col'
@@ -66,7 +65,7 @@ const RecommendationCards = () => {
       </motion.div>
       {/* Card content */}
       <motion.div
-        ref={ref}
+        viewport={{ once: true }}
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         className='w-96 h-48 p-4 rounded-2xl bg-shark-950 shrink-0 flex flex-col'
@@ -89,7 +88,7 @@ const RecommendationCards = () => {
       </motion.div>
       {/* Card content */}
       <motion.div
-        ref={ref}
+        viewport={{ once: true }}
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         className='w-96 h-48 p-4 rounded-2xl bg-shark-950 shrink-0 flex flex-col'
@@ -112,7 +111,7 @@ const RecommendationCards = () => {
       </motion.div>
       {/* Card content */}
       <motion.div
-        ref={ref}
+        viewport={{ once: true }}
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         className='w-96 h-48 p-4 rounded-2xl bg-shark-950 shrink-0 flex flex-col'
