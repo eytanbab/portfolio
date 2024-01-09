@@ -23,47 +23,13 @@ const Navbar = ({
 
   return (
     <>
-      {/* Mobile nav */}
-      <nav className='lg:hidden p-4 h-20 w-full bg-woodsmoke-950/10 backdrop-blur-3xl text-seashellPeach-50 flex justify-between items-center z-10 relative'>
-        <h1 className='text-xl text-flesh-200 font-light relative'>
-          Ethan Babaev
-        </h1>
-        <button
-          onClick={handleMobileNav}
-          className='flex items-center justify-center'
-        >
-          <MenuIcon />
-        </button>
-      </nav>
-      {/* Menu Modal */}
-      <div
-        className={`${
-          openNav ? 'translate-x-0' : 'translate-x-full'
-        } text-center bg-woodsmoke-950/10 absolute inset-0 backdrop-blur-3xl  text-3xl transition-transform duration-300 lg:hidden`}
-      >
-        <ul className='flex w-full h-full flex-col items-center justify-center gap-8 text-seashellPeach-50 text-xl'>
-          <button>
-            <li>About</li>
-          </button>
-          <button>
-            <li>Projects</li>
-          </button>
-          <button>
-            <li>Contact</li>
-          </button>
-          <button>
-            <li>Resume</li>
-          </button>
-        </ul>
-      </div>
-
       {/*  Desktop navbar */}
-      <nav className='hidden lg:flex bg-seashellPeach-50/10 backdrop-blur-3xl fixed right-8 top-[50%] z-50 flex-col gap-4 p-2 rounded-full translate-y-[-50%]'>
+      <nav className='flex bg-seashellPeach-50/10 backdrop-blur-3xl fixed  right-1 lg:right-8 top-[50%] z-50 flex-col gap-4 p-2 rounded-full translate-y-[-50%]'>
         {/* About icon */}
         <svg
           className={`${
             active === 'about' ? 'fill-seashellPeach-50' : 'fill-hoki-500'
-          } size-8 cursor-pointer `}
+          }  size-6 lg:size-8 cursor-pointer `}
           viewBox='0 0 32 32'
           xmlns='http://www.w3.org/2000/svg'
           id='about'
@@ -85,7 +51,7 @@ const Navbar = ({
             active === 'recommendations'
               ? 'fill-seashellPeach-50'
               : 'fill-hoki-500'
-          } size-8 cursor-pointer `}
+          } size-6 lg:size-8 cursor-pointer `}
           onClick={() => {
             recommendationRef.current.scrollIntoView({ behavior: 'smooth' });
             setActive('recommendations');
@@ -130,7 +96,7 @@ const Navbar = ({
           viewBox='0 0 256 256'
           className={`${
             active === 'skills' ? 'fill-seashellPeach-50' : 'fill-hoki-500'
-          } size-8 cursor-pointer `}
+          } size-6 lg:size-8 cursor-pointer `}
         >
           <g>
             <g>
@@ -150,7 +116,7 @@ const Navbar = ({
           viewBox='0 0 256 256'
           className={`${
             active === 'projects' ? 'fill-seashellPeach-50' : 'fill-hoki-500'
-          } size-8 cursor-pointer `}
+          } size-6 lg:size-8 cursor-pointer `}
           id='projects'
           onClick={() => {
             projectsRef.current.scrollIntoView({ behavior: 'smooth' });
