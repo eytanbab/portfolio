@@ -2,9 +2,11 @@ import Contact from './Contact';
 
 const About = () => {
   return (
-    <div className='flex w-full flex-col gap-4 items-center justify-center lg:flex-row px-4'>
+    <div className='flex w-full flex-col gap-4 items-center justify-around lg:flex-row px-4 h-screen'>
+      {/* Wrapper */}
+
       {/* Hero text container*/}
-      <div className='w-full flex flex-col gap-2 justify-center items-start text-left mt-8'>
+      <div className='w-full flex flex-col gap-2 justify-center items-start text-left '>
         <h1 className='text-5xl text-seashellPeach-50 uppercase max-w-3xl lg:max-w-xl w-full'>
           Greetings!
         </h1>
@@ -27,7 +29,7 @@ const About = () => {
       {/* Avatar */}
       <img
         src='avatar.png'
-        className='rounded-full bg-flesh-200 size-72 self-center md:size-96'
+        className='rounded-full bg-flesh-200 size-72 self-center md:size-96 xl:size-[36rem]'
       />
     </div>
   );

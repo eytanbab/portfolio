@@ -11,7 +11,7 @@ function App() {
     <div
       className={`${
         openNav ? 'overflow-y-hidden' : 'overflow-y-visible'
-      } overflow-x-hidden w-screen h-screen relative flex flex-col gap-4 items-center`}
+      } overflow-x-hidden w-screen h-screen min-h-screen relative flex flex-col items-center`}
     >
       <Navbar openNav={openNav} setOpenNav={setOpenNav} />
       <div className='w-full max-w-7xl flex flex-col justify-center gap-24 items-center'>
