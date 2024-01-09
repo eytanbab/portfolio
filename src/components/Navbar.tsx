@@ -1,13 +1,26 @@
+import { useEffect, useState } from 'react';
 import MenuIcon from './MenuIcon/MenuIcon';
 interface NavbarProps {
   openNav: boolean;
   setOpenNav: React.Dispatch<React.SetStateAction<boolean>>;
+  aboutRef: React.MutableRefObject<HTMLDivElement>;
+  recommendationRef: React.MutableRefObject<HTMLDivElement>;
+  projectsRef: React.MutableRefObject<HTMLDivElement>;
 }
+type Active = 'about' | 'recommendations' | 'skills' | 'projects';
 
-const Navbar = ({ openNav, setOpenNav }: NavbarProps) => {
+const Navbar = ({
+  openNav,
+  setOpenNav,
+  aboutRef,
+  recommendationRef,
+  projectsRef,
+}: NavbarProps) => {
   const handleMobileNav = () => {
     setOpenNav((prev) => !prev);
   };
+  const [active, setActive] = useState<Active>('about');
+
   return (
     <>
       {/* Mobile nav */}
@@ -29,30 +42,54 @@ const Navbar = ({ openNav, setOpenNav }: NavbarProps) => {
         } text-center bg-woodsmoke-950/10 absolute inset-0 backdrop-blur-3xl  text-3xl transition-transform duration-300 lg:hidden`}
       >
         <ul className='flex w-full h-full flex-col items-center justify-center gap-8 text-seashellPeach-50 text-xl'>
-          <li>About</li>
-          <li>Projects</li>
-          <li>Contact</li>
-          <li>Resume</li>
+          <button>
+            <li>About</li>
+          </button>
+          <button>
+            <li>Projects</li>
+          </button>
+          <button>
+            <li>Contact</li>
+          </button>
+          <button>
+            <li>Resume</li>
+          </button>
         </ul>
       </div>
 
-      <nav className='hidden lg:flex fill-seashellPeach-50 bg-seashellPeach-50/10 backdrop-blur-3xl fixed right-8 top-[50%] z-50 flex-col gap-4 p-2 rounded-full translate-y-[-50%]'>
+      {/*  Desktop navbar */}
+      <nav className='hidden lg:flex bg-seashellPeach-50/10 backdrop-blur-3xl fixed right-8 top-[50%] z-50 flex-col gap-4 p-2 rounded-full translate-y-[-50%]'>
         {/* About icon */}
         <svg
-          className='size-8'
+          className={`${
+            active === 'about' ? 'fill-seashellPeach-50' : 'fill-hoki-500'
+          } size-8 cursor-pointer `}
           viewBox='0 0 32 32'
           xmlns='http://www.w3.org/2000/svg'
+          id='about'
+          onClick={() => {
+            aboutRef.current.scrollIntoView({ behavior: 'smooth' });
+            setActive('about');
+          }}
         >
           <path d='M16 15.503A5.041 5.041 0 1 0 16 5.42a5.041 5.041 0 0 0 0 10.083zm0 2.215c-6.703 0-11 3.699-11 5.5v3.363h22v-3.363c0-2.178-4.068-5.5-11-5.5z' />
         </svg>
 
-        {/* Recommendation icon */}
+        {/* Recommendations icon */}
         <svg
           version='1.1'
-          id='_x32_'
+          id='recommendations'
           xmlns='http://www.w3.org/2000/svg   '
           viewBox='0 0 512 512'
-          className='size-8'
+          className={`${
+            active === 'recommendations'
+              ? 'fill-seashellPeach-50'
+              : 'fill-hoki-500'
+          } size-8 cursor-pointer `}
+          onClick={() => {
+            recommendationRef.current.scrollIntoView({ behavior: 'smooth' });
+            setActive('recommendations');
+          }}
         >
           <style type='text/css'></style>
           <g>
@@ -88,9 +125,12 @@ const Navbar = ({ openNav, setOpenNav }: NavbarProps) => {
         {/* Skills icon */}
         <svg
           version='1.1'
+          id='skills'
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 256 256'
-          className='size-8'
+          className={`${
+            active === 'skills' ? 'fill-seashellPeach-50' : 'fill-hoki-500'
+          } size-8 cursor-pointer `}
         >
           <g>
             <g>
@@ -108,7 +148,14 @@ const Navbar = ({ openNav, setOpenNav }: NavbarProps) => {
           version='1.1'
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 256 256'
-          className='size-8'
+          className={`${
+            active === 'projects' ? 'fill-seashellPeach-50' : 'fill-hoki-500'
+          } size-8 cursor-pointer `}
+          id='projects'
+          onClick={() => {
+            projectsRef.current.scrollIntoView({ behavior: 'smooth' });
+            setActive('projects');
+          }}
         >
           <g>
             <g>

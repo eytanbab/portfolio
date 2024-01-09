@@ -1,8 +1,11 @@
 import Contact from './Contact';
 
-const About = () => {
+const About = ({ aboutRef }) => {
   return (
-    <div className='flex w-full items-center justify-center lg:flex-row px-4 h-screen'>
+    <div
+      ref={aboutRef}
+      className='flex w-full items-center justify-center lg:flex-row px-4 h-screen'
+    >
       {/* About wrapper */}
       <div className='flex flex-col gap-4 items-start justify-center lg:flex-row'>
         {/* Hero text container*/}

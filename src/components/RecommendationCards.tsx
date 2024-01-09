@@ -8,7 +8,7 @@ declare module 'framer-motion' {
   };
 }
 
-const RecommendationCards = () => {
+const RecommendationCards = ({ recommendationRef }) => {
   const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
 
@@ -20,7 +20,10 @@ const RecommendationCards = () => {
   }, [scrollY, ref]);
 
   return (
-    <div className='flex gap-4 items-start flex-wrap w-full justify-center px-4 min-h-screen content-center'>
+    <div
+      ref={recommendationRef}
+      className='flex gap-4 items-start flex-wrap w-full justify-center px-4 min-h-screen content-center'
+    >
       {/* Card content */}
       <motion.div
         viewport={{ once: true }}

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './App.css';
 import About from './components/About';
 import Navbar from './components/Navbar';
@@ -9,6 +9,10 @@ import Loader from './components/Loader/Loader';
 function App() {
   const [openNav, setOpenNav] = useState<boolean>(false);
   const [loading, isLoading] = useState<boolean>(true);
+  const aboutRef = useRef(null);
+  const recommendationRef = useRef(null);
+  const skillsRef = useRef(null);
+  const projectsRef = useRef(null);
   return (
     <div
       className={`${
@@ -19,11 +23,17 @@ function App() {
         <Loader isLoading={isLoading} />
       ) : (
         <>
-          <Navbar openNav={openNav} setOpenNav={setOpenNav} />
+          <Navbar
+            openNav={openNav}
+            setOpenNav={setOpenNav}
+            aboutRef={aboutRef}
+            recommendationRef={recommendationRef}
+            projectsRef={projectsRef}
+          />
           <div className='w-full max-w-7xl flex flex-col justify-center gap-24 items-center'>
-            <About />
-            <RecommendationCards />
-            <Projects />
+            <About aboutRef={aboutRef} />
+            <RecommendationCards recommendationRef={recommendationRef} />
+            <Projects projectsRef={projectsRef} />
           </div>
         </>
       )}
