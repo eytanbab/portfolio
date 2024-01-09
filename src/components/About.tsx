@@ -2,7 +2,7 @@ import Contact from './Contact';
 
 const About = () => {
   return (
-    <div className='flex w-full flex-col gap-4 items-center justify-around lg:flex-row px-4 h-screen'>
+    <div className='flex w-full flex-col gap-4 items-center justify-center lg:flex-row px-4 min-h-screen'>
       {/* Wrapper */}
 
       {/* Hero text container*/}
