@@ -42,7 +42,7 @@ const Loader = ({ isLoading }: Props) => {
       animate={{ opacity: 1, y: 0 }} // Animate both opacity and y-position
       transition={{ duration: 0.5 }}
       exit={{ opacity: 0 }}
-      className='absolute inset-0 items-center justify-center text-3xl md:text-5xl uppercase flex font-black text-seashellPeach-50 lg:text-7xl xl:text-9xl bg-woodsmoke-950'
+      className='absolute inset-0 items-center justify-center text-3xl md:text-5xl uppercase flex font-black text-seashellPeach-50 lg:text-7xl xl:text-9xl bg-woodsmoke-950/50'
     >
       {words[currentWordIndex]}
     </motion.div>
