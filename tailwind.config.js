@@ -4,6 +4,9 @@ export default {
   theme: {
     extend: {
       colors: {
+        hoki: {
+          500: '#668499',
+        },
         woodsmoke: {
           950: '#0B0D11',
         },
