@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import About from './components/About';
 import Navbar from './components/Navbar';
-import Projects from './components/Projects';
+import Projects from './components/Projects/Projects';
 import RecommendationCards from './components/RecommendationCards';
 import Loader from './components/Loader/Loader';
 
