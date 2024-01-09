@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import MenuIcon from './MenuIcon/MenuIcon';
+import { useState } from 'react';
 interface NavbarProps {
   openNav: boolean;
   setOpenNav: React.Dispatch<React.SetStateAction<boolean>>;
@@ -10,15 +9,13 @@ interface NavbarProps {
 type Active = 'about' | 'recommendations' | 'skills' | 'projects';
 
 const Navbar = ({
-  openNav,
-  setOpenNav,
+  
+  
   aboutRef,
   recommendationRef,
   projectsRef,
 }: NavbarProps) => {
-  const handleMobileNav = () => {
-    setOpenNav((prev) => !prev);
-  };
+ 
   const [active, setActive] = useState<Active>('about');
 
   return (
