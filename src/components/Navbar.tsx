@@ -15,7 +15,10 @@ const Navbar = ({ openNav, setOpenNav }: NavbarProps) => {
         <h1 className='text-xl text-flesh-200 font-light relative'>
           Ethan Babaev
         </h1>
-        <button onClick={handleMobileNav}>
+        <button
+          onClick={handleMobileNav}
+          className='flex items-center justify-center'
+        >
           <MenuIcon />
         </button>
       </nav>
