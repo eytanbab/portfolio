@@ -19,4 +19,5 @@ export const words: string[] = [
   'Generous',
   'Positive',
   'Grateful',
+  'Awesome',
 ];
