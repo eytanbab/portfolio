@@ -3,6 +3,7 @@ import './App.css';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import Projects from './components/Projects';
+import RecommendationCards from './components/RecommendationCards';
 
 function App() {
   const [openNav, setOpenNav] = useState<boolean>(false);
@@ -15,6 +16,7 @@ function App() {
       <Navbar openNav={openNav} setOpenNav={setOpenNav} />
       <div className='w-full max-w-7xl flex flex-col justify-center gap-24 items-center'>
         <About />
+        <RecommendationCards />
         <Projects />
       </div>
     </div>
