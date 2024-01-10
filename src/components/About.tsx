@@ -14,10 +14,10 @@ const About = ({
       <div className='flex flex-col gap-4 items-start justify-center lg:flex-row'>
         {/* Hero text container*/}
         <div className='w-full flex flex-col gap-2 items-start justify-center text-left lg:h-96 xl:h-[36rem] p-4'>
-          <h1 className='text-5xl text-seashellPeach-50 uppercase max-w-3xl lg:max-w-xl w-full'>
+          <h1 className='text-5xl text-seashellPeach-50 font-bold uppercase max-w-3xl lg:max-w-xl w-full xl:text-7xl'>
             Greetings!
           </h1>
-          <p className='text-karry-200 font-light text-base ml-1  max-w-3xl lg:max-w-xl'>
+          <p className='text-karry-200 font-light text-base ml-1  max-w-3xl lg:max-w-xl xl:text-xl'>
             I'm not your average code monkey. I'm an alchemist, transforming
             lines of text into pixelated masterpieces. With a dash of HTML, a
             sprinkle of CSS, and a generous helping of Next.js, I sculpt
@@ -27,7 +27,7 @@ const About = ({
             just functional, they're unforgettable. Websites that make you say
             "wow" before you even hit enter.
           </p>
-          <p className='text-lavender-300 text-base font-light italic mt-4 ml-1 line-through max-w-3xl lg:max-w-xl w-full'>
+          <p className='text-lavender-300 text-base font-light italic mt-4 ml-1 line-through max-w-3xl lg:max-w-xl w-full xl:text-lg'>
             This bio was crafted with a sprinkle of artificial intelligence.
           </p>
           <Contact />
