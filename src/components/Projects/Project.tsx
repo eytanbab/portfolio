@@ -11,15 +11,15 @@ const Project = ({ project }: { project: projectProps }) => {
     <div
       className={`${
         project.projectId % 2 === 0 ? 'lg:flex-row-reverse' : ''
-      } w-full flex flex-col items-center lg:flex-row lg:gap-4 xl:justify-center`}
+      } w-full flex flex-col items-start lg:flex-row lg:gap-4 xl:justify-start`}
     >
       {/* Site image */}
       <img
         src={project.projectImagePath}
-        className='rounded-t-xl object-contain max-h-80 xl:max-h-96 lg:rounded-xl 3xl:max-h-[720px] '
+        className='rounded-t-xl w-full object-contain max-h-80 xl:max-h-96 lg:rounded-xl 3xl:max-h-[720px]'
       />
       {/* Project description */}
-      <div className='lg:flex w-full bg-shark-950 rounded-b-xl flex flex-col p-4 lg:h-80 max-w-[570px] xl:max-h-96 xl:h-full xl:max-w-xl 3xl:max-h-[720px] 3xl:h-full lg:rounded-xl'>
+      <div className='w-full bg-shark-950 rounded-b-xl h-full flex flex-col p-4 max-w-[570px] xl:max-w-xl lg:rounded-xl lg:h-80 xl:h-96'>
         <div
           className='w-full flex justify-between items-center '
           onClick={handleExpand}
@@ -27,7 +27,7 @@ const Project = ({ project }: { project: projectProps }) => {
           <h1
             className={`${
               expand ? 'text-3xl' : 'text-xl'
-            }  font-light uppercase`}
+            }  font-light uppercase lg:text-3xl`}
           >
             {project.projectName}
           </h1>
