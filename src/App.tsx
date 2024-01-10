@@ -8,12 +8,16 @@ import Loader from './components/Loader/Loader';
 
 function App() {
   const [loading, isLoading] = useState<boolean>(true);
-  const aboutRef = useRef(null);
-  const recommendationRef = useRef(null);
-  const skillsRef = useRef(null);
-  const projectsRef = useRef(null);
+  const aboutRef: React.MutableRefObject<HTMLDivElement | null> | null =
+    useRef(null);
+  const recommendationRef: React.MutableRefObject<HTMLDivElement | null> | null =
+    useRef(null);
+  // const skillsRef: React.MutableRefObject<HTMLDivElement | null> | null =
+  //   useRef(null);
+  const projectsRef: React.MutableRefObject<HTMLDivElement | null> | null =
+    useRef(null);
   return (
-    <div className='overflow-x-hidden w-screen h-screen  relative flex flex-col items-center snap-y snap-proximity'>
+    <div className='overflow-x-hidden w-screen h-screen  relative flex flex-col items-center snap-y snap-mandatory'>
       {loading ? (
         <Loader isLoading={isLoading} />
       ) : (
