@@ -1,6 +1,10 @@
 import Contact from './Contact';
 
-const About = ({ aboutRef }) => {
+const About = ({
+  aboutRef,
+}: {
+  aboutRef: React.MutableRefObject<HTMLDivElement | null> | null;
+}) => {
   return (
     <div
       ref={aboutRef}

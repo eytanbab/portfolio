@@ -1,7 +1,11 @@
 import Project from './Project';
 import { data } from './data';
 
-const Projects = ({ projectsRef }) => {
+const Projects = ({
+  projectsRef,
+}: {
+  projectsRef: React.MutableRefObject<HTMLDivElement | null> | null;
+}) => {
   return (
     <div
       ref={projectsRef}

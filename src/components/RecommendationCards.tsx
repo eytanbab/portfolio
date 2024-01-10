@@ -8,7 +8,11 @@ declare module 'framer-motion' {
   };
 }
 
-const RecommendationCards = ({ recommendationRef }) => {
+const RecommendationCards = ({
+  recommendationRef,
+}: {
+  recommendationRef: React.MutableRefObject<HTMLDivElement | null> | null;
+}) => {
   const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
 
