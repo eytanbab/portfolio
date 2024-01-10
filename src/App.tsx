@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Projects from './components/Projects/Projects';
 import RecommendationCards from './components/RecommendationCards';
 import Loader from './components/Loader/Loader';
+import { motion } from 'framer-motion';
 
 function App() {
   const [loading, isLoading] = useState<boolean>(true);
@@ -18,10 +19,12 @@ function App() {
     useRef(null);
   return (
     <div className='overflow-x-hidden w-screen h-screen  relative flex flex-col items-center snap-y snap-mandatory'>
-      {loading ? (
-        <Loader isLoading={isLoading} />
-      ) : (
-        <>
+      <Loader loading={loading} isLoading={isLoading} />
+      {!loading && (
+        <motion.div
+          initial={{ opacity: 0, y: 1000 }} // Start slightly above for smoother entry
+          animate={{ opacity: 1, y: 0 }} // Animate both opacity and y-position
+        >
           <Navbar
             aboutRef={aboutRef}
             recommendationRef={recommendationRef}
@@ -32,7 +35,7 @@ function App() {
             <RecommendationCards recommendationRef={recommendationRef} />
             <Projects projectsRef={projectsRef} />
           </div>
-        </>
+        </motion.div>
       )}
     </div>
   );
