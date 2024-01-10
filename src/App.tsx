@@ -7,25 +7,18 @@ import RecommendationCards from './components/RecommendationCards';
 import Loader from './components/Loader/Loader';
 
 function App() {
-  const [openNav, setOpenNav] = useState<boolean>(false);
   const [loading, isLoading] = useState<boolean>(true);
   const aboutRef = useRef(null);
   const recommendationRef = useRef(null);
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
   return (
-    <div
-      className={`${
-        openNav ? '' : 'overflow-y-visible'
-      } overflow-x-hidden overflow-y-hidden w-screen h-screen  relative flex flex-col items-center`}
-    >
+    <div className='overflow-x-hidden w-screen h-screen  relative flex flex-col items-center snap-y snap-proximity'>
       {loading ? (
         <Loader isLoading={isLoading} />
       ) : (
         <>
           <Navbar
-            openNav={openNav}
-            setOpenNav={setOpenNav}
             aboutRef={aboutRef}
             recommendationRef={recommendationRef}
             projectsRef={projectsRef}

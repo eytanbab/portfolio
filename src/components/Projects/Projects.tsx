@@ -5,7 +5,7 @@ const Projects = ({ projectsRef }) => {
   return (
     <div
       ref={projectsRef}
-      className='flex flex-col w-full p-4 text-seashellPeach-50 items-center justify-start gap-2 min-h-screen'
+      className='flex flex-col w-full p-4 text-seashellPeach-50 items-center justify-start gap-2 min-h-screen snap-start'
     >
       <h1 className='max-w-[570px] lg:max-w-full text-3xl uppercase text-left w-full xl:text-5xl'>
         Projects

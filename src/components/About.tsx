@@ -4,7 +4,7 @@ const About = ({ aboutRef }) => {
   return (
     <div
       ref={aboutRef}
-      className='flex w-full items-center justify-center lg:flex-row px-4 h-screen'
+      className='flex w-full items-center justify-center lg:flex-row px-4 h-screen snap-start'
     >
       {/* About wrapper */}
       <div className='flex flex-col gap-4 items-start justify-center lg:flex-row'>
