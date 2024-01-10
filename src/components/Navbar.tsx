@@ -17,7 +17,7 @@ const Navbar = ({ aboutRef, recommendationRef, projectsRef }: NavbarProps) => {
   return (
     <>
       {/*  Desktop navbar */}
-      <nav className='flex bg-seashellPeach-50/10 backdrop-blur-3xl fixed  right-1 lg:right-8 top-[50%] z-50 flex-col gap-4 p-2 rounded-full translate-y-[-50%]'>
+      <nav className='flex bg-seashellPeach-50/10 backdrop-blur-3xl fixed  right-1 lg:right-8 top-[50%] z-50 flex-col gap-4 px-2 py-4 rounded-full translate-y-[-50%]'>
         {/* About icon */}
         <svg
           className={`${
