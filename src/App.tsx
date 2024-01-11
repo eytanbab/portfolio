@@ -19,12 +19,13 @@ function App() {
   const projectsRef: React.MutableRefObject<HTMLDivElement | null> | null =
     useRef(null);
   return (
-    <div className='overflow-x-hidden w-screen h-screen  relative flex flex-col items-center snap-y snap-mandatory'>
+    <div className='overflow-x-hidden w-screen h-screen  relative flex flex-col items-center'>
       <Loader loading={loading} isLoading={isLoading} />
       {!loading && (
         <motion.div
-          initial={{ opacity: 0, y: 1000 }} // Start slightly above for smoother entry
-          animate={{ opacity: 1, y: 0 }} // Animate both opacity and y-position
+          initial={{ opacity: 0, y: 1000 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, type: 'tween' }}
         >
           <Navbar
             aboutRef={aboutRef}
@@ -32,7 +33,7 @@ function App() {
             projectsRef={projectsRef}
             skillsRef={skillsRef}
           />
-          <div className='w-screen max-w-7xl flex flex-col justify-center gap-24 items-center '>
+          <div className='w-screen max-w-7xl flex flex-col justify-center gap-24 items-center snap-y snap-proximity relative'>
             <About aboutRef={aboutRef} />
             <RecommendationCards recommendationRef={recommendationRef} />
             <Skills skillsRef={skillsRef} />
