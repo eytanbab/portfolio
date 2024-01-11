@@ -1,72 +1,47 @@
-import { ChevronDown } from 'lucide-react';
-import { useState } from 'react';
 import { projectProps } from './data';
 
 const Project = ({ project }: { project: projectProps }) => {
-  const [expand, setExpand] = useState(false);
-  const handleExpand = () => {
-    setExpand((prev) => !prev);
-  };
   return (
-    <div
-      className={`${
-        project.projectId % 2 === 0 ? 'lg:flex-row-reverse' : ''
-      } w-full flex flex-col items-start lg:flex-row lg:gap-4 xl:justify-start`}
-    >
-      {/* Site image */}
+    <div className='flex flex-col w-96 h-60 p-2 bg-shark-950 rounded-lg gap-1 relative overflow-hidden xl:w-[36rem] xl:h-80'>
+      <div>
+        <h1 className='text-flesh-200 uppercase text-xl font-extrabold xl:text-3xl'>
+          {project.projectName}
+        </h1>
+        <p className='text-xs font-extralight w-60 xl:w-80 xl:text-base'>
+          {project.projectDesc}
+        </p>
+      </div>
+      <p className='text-xs font-extralight italic text-lavender-300 line-through	'>
+        Totally not generated with chatGPT
+      </p>
+      <div className='flex-1 w-full flex flex-col justify-end gap-4 xl:gap-8'>
+        <div className='self-center flex gap-4 text-xs xl:text-sm'>
+          <a
+            href={project.link}
+            className='underline underline-offset-2 hover:underline-offset-4 transition-all duration-150 ease-in-out'
+          >
+            Link
+          </a>
+          <a
+            className='underline underline-offset-2 hover:underline-offset-4  transition-all duration-150 ease-in-out'
+            href={project.repo}
+          >
+            Github
+          </a>
+        </div>
+
+        <ul className='flex gap-4 self-center z-10'>
+          {project.techUsed.map((tech) => (
+            <li className='bg-brightGray-900 px-3 py-1 rounded-full text-xs font-light uppercase'>
+              {tech}
+            </li>
+          ))}
+        </ul>
+      </div>
       <img
         src={project.projectImagePath}
-        className='rounded-t-xl w-full object-contain max-h-80 xl:max-h-96 lg:rounded-xl 3xl:max-h-[720px]'
+        className='absolute w-32 drop-shadow-md -right-12 -rotate-6 hover:-rotate-12 duration-150 ease-in-out top-1/2 -translate-y-1/2 hover:scale-105 xl:w-48'
       />
-      {/* Project description */}
-      <div className='w-full bg-shark-950 rounded-b-xl h-full flex flex-col p-4 max-w-[570px] xl:max-w-xl lg:rounded-xl lg:h-80 xl:h-96'>
-        <div
-          className='w-full flex justify-between items-center '
-          onClick={handleExpand}
-        >
-          <h1
-            className={`${
-              expand ? 'text-3xl' : 'text-xl'
-            }  font-light uppercase lg:text-3xl`}
-          >
-            {project.projectName}
-          </h1>
-          <ChevronDown
-            className={`${
-              expand ? 'rotate-180' : 'rotate-0'
-            } transition-transform duration-300 lg:hidden`}
-          />
-        </div>
-        <div
-          className={`${
-            expand ? 'flex flex-col' : 'hidden'
-          } lg:flex lg:flex-col  lg:h-full`}
-        >
-          <p className='font-extralight text-karry-200 lg:text-sm'>
-            {project.projectDesc}
-          </p>
-          <p className='italic text-lavender-300 mt-4 font-light text-xs'>
-            totally not written by chatGPT
-          </p>
-          {/* Links */}
-          <ul className='flex gap-4 self-center my-8'>
-            <a href={project.link} className='underline font-extralight'>
-              Link
-            </a>
-            <a href={project.repo} className='underline font-extralight'>
-              Github
-            </a>
-          </ul>
-          {/* Used technology*/}
-          <ul className='flex self-center gap-4 items-center h-full text-center text-xs uppercase lg:items-end'>
-            {project.techUsed.map((tech) => (
-              <li className='px-4 py-1  rounded-full bg-brightGray-900'>
-                {tech}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
     </div>
   );
 };
