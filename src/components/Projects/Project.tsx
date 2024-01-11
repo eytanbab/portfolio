@@ -32,7 +32,10 @@ const Project = ({ project }: { project: projectProps }) => {
 
         <ul className='flex gap-4 self-center z-10'>
           {project.techUsed.map((tech) => (
-            <li className='bg-brightGray-900 px-3 py-1 rounded-full text-xs font-light uppercase'>
+            <li
+              key={tech}
+              className='bg-brightGray-900 px-3 py-1 rounded-full text-xs font-light uppercase'
+            >
               {tech}
             </li>
           ))}
