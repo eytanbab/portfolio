@@ -2,14 +2,19 @@ import { useInView } from 'framer-motion';
 interface NavbarProps {
   aboutRef: React.MutableRefObject<HTMLDivElement | null> | null;
   recommendationRef: React.MutableRefObject<HTMLDivElement | null> | null;
-  // skillsRef: React.MutableRefObject<HTMLDivElement | null> | null;
+  skillsRef: React.MutableRefObject<HTMLDivElement | null> | null;
   projectsRef: React.MutableRefObject<HTMLDivElement | null> | null;
 }
 
-const Navbar = ({ aboutRef, recommendationRef, projectsRef }: NavbarProps) => {
+const Navbar = ({
+  aboutRef,
+  recommendationRef,
+  projectsRef,
+  skillsRef,
+}: NavbarProps) => {
   const isInViewAbout = useInView(aboutRef!);
   const isInViewRecommendations = useInView(recommendationRef!);
-  // const isInViewSkills = useInView(skillsRef);
+  const isInViewSkills = useInView(skillsRef!);
   const isInViewProjects = useInView(projectsRef!);
 
   return (
@@ -76,9 +81,8 @@ const Navbar = ({ aboutRef, recommendationRef, projectsRef }: NavbarProps) => {
         </svg>
 
         {/* Skills icon */}
-        {/* <svg
+        <svg
           version='1.1'
-          id='skills'
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 256 256'
           className={`${
@@ -94,7 +98,7 @@ const Navbar = ({ aboutRef, recommendationRef, projectsRef }: NavbarProps) => {
               </g>
             </g>
           </g>
-        </svg> */}
+        </svg>
 
         {/* Projects icon */}
         <svg
