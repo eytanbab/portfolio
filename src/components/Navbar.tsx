@@ -88,6 +88,9 @@ const Navbar = ({
           className={`${
             isInViewSkills ? 'fill-seashellPeach-50' : 'fill-hoki-500'
           } size-6 lg:size-8 cursor-pointer `}
+          onClick={() => {
+            skillsRef?.current?.scrollIntoView({ behavior: 'smooth' });
+          }}
         >
           <g>
             <g>
