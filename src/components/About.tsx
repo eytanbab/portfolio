@@ -8,7 +8,7 @@ const About = ({
   return (
     <div
       ref={aboutRef}
-      className='flex w-full items-center justify-center lg:flex-row px-4 h-screen snap-start'
+      className='flex w-full items-center justify-center lg:flex-row p-4 min-h-screen snap-start'
     >
       {/* About wrapper */}
       <div className='flex flex-col gap-4 items-start justify-center lg:flex-row'>

@@ -26,7 +26,7 @@ const RecommendationCards = ({
   return (
     <div
       ref={recommendationRef}
-      className='flex gap-4 items-start flex-wrap w-full justify-center px-4 min-h-screen content-center snap-start'
+      className='flex gap-4 items-start flex-wrap w-full justify-center p-4 min-h-screen content-center snap-start'
     >
       {/* Card content */}
       <motion.div
