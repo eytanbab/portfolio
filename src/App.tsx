@@ -6,6 +6,7 @@ import Projects from './components/Projects/Projects';
 import RecommendationCards from './components/RecommendationCards';
 import Loader from './components/Loader/Loader';
 import { motion } from 'framer-motion';
+import Skills from './components/Skills/Skills';
 
 function App() {
   const [loading, isLoading] = useState<boolean>(true);
@@ -13,8 +14,8 @@ function App() {
     useRef(null);
   const recommendationRef: React.MutableRefObject<HTMLDivElement | null> | null =
     useRef(null);
-  // const skillsRef: React.MutableRefObject<HTMLDivElement | null> | null =
-  //   useRef(null);
+  const skillsRef: React.MutableRefObject<HTMLDivElement | null> | null =
+    useRef(null);
   const projectsRef: React.MutableRefObject<HTMLDivElement | null> | null =
     useRef(null);
   return (
@@ -29,10 +30,12 @@ function App() {
             aboutRef={aboutRef}
             recommendationRef={recommendationRef}
             projectsRef={projectsRef}
+            skillsRef={skillsRef}
           />
-          <div className='w-full max-w-7xl flex flex-col justify-center gap-24 items-center'>
+          <div className='w-screen max-w-7xl flex flex-col justify-center gap-24 items-center '>
             <About aboutRef={aboutRef} />
             <RecommendationCards recommendationRef={recommendationRef} />
+            <Skills skillsRef={skillsRef} />
             <Projects projectsRef={projectsRef} />
           </div>
         </motion.div>
