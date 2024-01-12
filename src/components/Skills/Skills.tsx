@@ -1,17 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import Skill from './Skill';
-import { useScroll } from 'framer-motion';
+import React from 'react';
 import Marquee from './Marquee';
-
-const skills: string[] = [
-  'javascript',
-  'typescript',
-  'React',
-  'next.js',
-  'postgreSQL',
-  'python',
-  'node.js',
-];
 
 const Skills = ({
   skillsRef,
