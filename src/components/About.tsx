@@ -6,12 +6,12 @@ const About = ({
   aboutRef: React.MutableRefObject<HTMLDivElement | null> | null;
 }) => {
   return (
-    <div
-      ref={aboutRef}
-      className='flex w-full items-center justify-center lg:flex-row p-4 min-h-screen snap-start'
-    >
+    <div className='flex w-full items-center justify-center lg:flex-row p-4 min-h-screen snap-start'>
       {/* About wrapper */}
-      <div className='flex flex-col gap-4 items-start justify-center lg:flex-row'>
+      <div
+        ref={aboutRef}
+        className='flex flex-col gap-4 items-start justify-center lg:flex-row'
+      >
         {/* Hero text container*/}
         <div className='w-full flex flex-col gap-2 items-start justify-center text-left lg:h-96 xl:h-[36rem] p-4'>
           <h1 className='text-5xl text-seashellPeach-50 font-bold uppercase max-w-3xl lg:max-w-xl w-full xl:text-7xl'>
