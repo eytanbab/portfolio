@@ -4,7 +4,7 @@
 
 @layer base {
   .font-outline {
-    -webkit-text-stroke: 1px #fafafa;
+    -webkit-text-stroke: 1px #fff4ed;
   }
 }
 :root {
