@@ -42,7 +42,7 @@ const Loader = ({ loading, isLoading }: Props) => {
           initial={{ opacity: 1, y: 0 }} // Start slightly above for smoother entry
           exit={{ opacity: 0, y: -1000 }}
           transition={{ duration: 0.5, type: 'tween' }}
-          className='absolute inset-0 items-center justify-center text-3xl md:text-5xl uppercase flex font-black text-seashellPeach-50 lg:text-7xl xl:text-9xl bg-woodsmoke-950/50'
+          className='items-center justify-center h-screen w-full text-3xl md:text-5xl uppercase flex font-black text-seashellPeach-50 lg:text-7xl xl:text-9xl bg-woodsmoke-950/50'
         >
           {words[currentWordIndex]}
         </motion.div>
