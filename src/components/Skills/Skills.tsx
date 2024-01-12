@@ -1,15 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Skill from './Skill';
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-  useMotionValue,
-  useVelocity,
-  useAnimationFrame,
-  wrap,
-} from 'framer-motion';
+import { useScroll } from 'framer-motion';
+import Marquee from './Marquee';
 
 const skills: string[] = [
   'javascript',
@@ -26,47 +18,32 @@ const Skills = ({
 }: {
   skillsRef: React.MutableRefObject<HTMLDivElement | null> | null;
 }) => {
-  const baseVelocity = 10;
-  const baseX = useMotionValue(0);
-  const { scrollY } = useScroll();
-  const scrollVelocity = useVelocity(scrollY);
-  const smoothVelocity = useSpring(scrollVelocity, {
-    damping: 50,
-    stiffness: 400,
-  });
-  const velocityFactor = useTransform(smoothVelocity, [0, 2000], [0, 10], {
-    clamp: false,
-  });
-  const x = useTransform(baseX, (v) => `${wrap(-20, -45, v)}%`);
-
-  const directionFactor = useRef<number>(1);
-  useAnimationFrame((_, delta) => {
-    let moveBy = directionFactor.current * baseVelocity * (delta / 500);
-
-    /**
-     * This is what changes the direction of the scroll once we
-     * switch scrolling directions.
-     */
-    if (velocityFactor.get() < 0) {
-      directionFactor.current = -1;
-    } else if (velocityFactor.get() > 0) {
-      directionFactor.current = 1;
-    }
-
-    moveBy += directionFactor.current * moveBy * velocityFactor.get();
-
-    baseX.set(baseX.get() + moveBy);
-  });
-
   return (
     <div
       ref={skillsRef}
-      className='text-4xl uppercase h-screen w-full snap-start flex flex-col font-black gap-2 justify-center items-center text-center overflow-hidden lg:text-7xl'
+      className='text-5xl uppercase min-h-screen snap-start font-black gap-4 text-center overflow-hidden relative lg:text-9xl flex flex-col items-center justify-center w-full skew-y-2'
     >
-      {skills.map((skill) => (
-        // change empty string to x
-        <Skill key={skill} skill={skill} x={''} />
-      ))}
+      <Marquee direction='right' className='text-seashellPeach-50'>
+        react
+      </Marquee>
+      <Marquee direction='left' className='text-lavender-300'>
+        javascript
+      </Marquee>
+      <Marquee direction='right' className='text-hoki-500'>
+        typescript
+      </Marquee>
+      <Marquee direction='left' className='text-flesh-200'>
+        next.js
+      </Marquee>
+      <Marquee direction='right' className='text-shark-950'>
+        postgreSQL
+      </Marquee>
+      <Marquee direction='left' className='text-karry-200'>
+        node.js
+      </Marquee>
+      <Marquee direction='right' className='text-brightGray-900'>
+        python
+      </Marquee>
     </div>
   );
 };
