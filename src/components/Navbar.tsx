@@ -31,7 +31,7 @@ const Navbar = ({
           onClick={() => {
             aboutRef?.current?.scrollIntoView({
               behavior: 'smooth',
-              block: 'start',
+              block: 'center',
             });
           }}
         >
@@ -50,7 +50,7 @@ const Navbar = ({
           onClick={() => {
             recommendationRef?.current?.scrollIntoView({
               behavior: 'smooth',
-              block: 'center',
+              block: 'start',
             });
           }}
         >
