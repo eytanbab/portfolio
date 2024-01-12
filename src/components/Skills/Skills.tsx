@@ -7,7 +7,7 @@ const Skills = ({
   skillsRef: React.MutableRefObject<HTMLDivElement | null> | null;
 }) => {
   return (
-    <div className='text-5xl uppercase min-h-screen snap-start font-black  lg:text-7xl w-full skew-y-2'>
+    <div className='text-5xl uppercase min-h-screen snap-start font-black  lg:text-7xl w-full skew-y-2 flex items-center'>
       <div
         ref={skillsRef}
         className='flex flex-col gap-1 text-center overflow-hidden relative items-center justify-center'
