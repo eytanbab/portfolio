@@ -24,17 +24,17 @@ const RecommendationCards = ({
   }, [scrollY, ref]);
 
   return (
-    <div className='w-full min-h-screen snap-start'>
-      <div
-        ref={recommendationRef}
-        className='flex gap-4 items-start flex-wrap w-full justify-center p-4 content-center'
-      >
+    <div
+      ref={recommendationRef}
+      className='w-full min-h-screen snap-start flex items-center'
+    >
+      <div className='flex gap-4 items-center flex-wrap w-full justify-center p-4 content-center'>
         {/* Card content */}
         <motion.div
           viewport={{ once: true }}
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className='w-96 h-48 p-4 rounded-2xl bg-shark-950 shrink-0 flex flex-col'
+          className='w-96 h-48 p-4 rounded-2xl bg-shark-950 shrink-0 flex flex-col items-center justify-center'
         >
           <div className='flex items-center gap-2'>
             <img
