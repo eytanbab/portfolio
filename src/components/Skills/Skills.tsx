@@ -9,7 +9,7 @@ const Skills = ({
   return (
     <div
       ref={skillsRef}
-      className='text-5xl uppercase min-h-screen snap-start font-black gap-4 text-center overflow-hidden relative lg:text-9xl flex flex-col items-center justify-center w-full skew-y-2'
+      className='text-5xl uppercase min-h-screen snap-start font-black gap-4 text-center overflow-hidden relative lg:text-7xl flex flex-col items-center justify-center w-full skew-y-2'
     >
       <Marquee
         direction='right'
