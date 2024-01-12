@@ -26,7 +26,7 @@ function App() {
           initial={{ opacity: 0, y: 1000 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, type: 'tween' }}
-          className='oveflow-x-hidden w-full'
+          className='oveflow-x-hidden w-full flex justify-center'
         >
           <Navbar
             aboutRef={aboutRef}
