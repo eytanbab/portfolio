@@ -19,7 +19,7 @@ function App() {
   const projectsRef: React.MutableRefObject<HTMLDivElement | null> | null =
     useRef(null);
   return (
-    <div className='overflow-x-hidden w-screen h-screen  relative flex flex-col items-center'>
+    <div className='overflow-x-hidden w-screen relative flex flex-col items-center'>
       <Loader loading={loading} isLoading={isLoading} />
       {!loading && (
         <motion.div
