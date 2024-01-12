@@ -26,7 +26,7 @@ const Skills = ({
       <Marquee direction='left' className='text-flesh-200'>
         next.js
       </Marquee>
-      <Marquee direction='right' className='text-shark-950 bg-lavender-300/10'>
+      <Marquee direction='right' className='text-shark-950 bg-lavender-300/30'>
         postgreSQL
       </Marquee>
       <Marquee direction='left' className='text-karry-200 '>
