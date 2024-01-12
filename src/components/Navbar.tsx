@@ -5,7 +5,6 @@ interface NavbarProps {
   skillsRef: React.MutableRefObject<HTMLDivElement | null> | null;
   projectsRef: React.MutableRefObject<HTMLDivElement | null> | null;
 }
-
 const Navbar = ({
   aboutRef,
   recommendationRef,
@@ -30,7 +29,10 @@ const Navbar = ({
           xmlns='http://www.w3.org/2000/svg'
           id='about'
           onClick={() => {
-            aboutRef?.current?.scrollIntoView({ behavior: 'smooth' });
+            aboutRef?.current?.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            });
           }}
         >
           <path d='M16 15.503A5.041 5.041 0 1 0 16 5.42a5.041 5.041 0 0 0 0 10.083zm0 2.215c-6.703 0-11 3.699-11 5.5v3.363h22v-3.363c0-2.178-4.068-5.5-11-5.5z' />
@@ -46,7 +48,10 @@ const Navbar = ({
             isInViewRecommendations ? 'fill-seashellPeach-50' : 'fill-hoki-500'
           } size-6 lg:size-8 cursor-pointer `}
           onClick={() => {
-            recommendationRef?.current?.scrollIntoView({ behavior: 'smooth' });
+            recommendationRef?.current?.scrollIntoView({
+              behavior: 'smooth',
+              block: 'center',
+            });
           }}
         >
           <style type='text/css'></style>
@@ -89,7 +94,10 @@ const Navbar = ({
             isInViewSkills ? 'fill-seashellPeach-50' : 'fill-hoki-500'
           } size-6 lg:size-8 cursor-pointer `}
           onClick={() => {
-            skillsRef?.current?.scrollIntoView({ behavior: 'smooth' });
+            skillsRef?.current?.scrollIntoView({
+              behavior: 'smooth',
+              block: 'center',
+            });
           }}
         >
           <g>
