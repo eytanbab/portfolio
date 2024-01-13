@@ -8,7 +8,6 @@ type RowProps = {
 };
 
 const Row = ({ children, x, className }: RowProps) => {
-  console.log(x);
   return (
     <motion.div style={{ translateX: x }} className='w-full'>
       <span className={className}>{children}</span>
