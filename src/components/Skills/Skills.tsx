@@ -1,47 +1,39 @@
 import React from 'react';
-import Marquee from './Marquee';
-
+import Row from './Row';
+import { useScroll, useTransform } from 'framer-motion';
 const Skills = ({
   skillsRef,
 }: {
   skillsRef: React.MutableRefObject<HTMLDivElement | null> | null;
 }) => {
+  const { scrollYProgress } = useScroll();
+  const xRight = useTransform(scrollYProgress, [0, 1], [-1500, -1000]);
+  const xLeft = useTransform(scrollYProgress, [0, 1], [0, -1500]);
+
   return (
-    <div className='text-5xl uppercase min-h-screen snap-start font-black  lg:text-7xl w-full flex items-center'>
+    <div className='text-5xl uppercase min-h-screen snap-start font-black lg:text-7xl w-full flex items-center'>
       <div
         ref={skillsRef}
-        className='flex flex-col gap-1 text-center overflow-hidden relative items-center justify-center skew-y-2'
+        className='flex flex-col gap-4 text-left  relative items-center justify-center'
       >
-        <Marquee
-          direction='right'
-          className='text-seashellPeach-50 bg-shark-950/50'
-        >
-          react
-        </Marquee>
-        <Marquee direction='left' className='text-lavender-300'>
+        <Row x={xRight} className='text-seashellPeach-50 '>
+          React
+        </Row>
+        <Row x={xLeft} className='text-shark-950 '>
           javascript
-        </Marquee>
-        <Marquee direction='right' className='text-hoki-500 bg-lavender-300/10'>
+        </Row>
+        <Row x={xRight} className='text-flesh-200'>
           typescript
-        </Marquee>
-        <Marquee direction='left' className='text-flesh-200'>
+        </Row>
+        <Row x={xLeft} className='text-brightGray-900'>
           next.js
-        </Marquee>
-        <Marquee
-          direction='right'
-          className='text-shark-950 bg-lavender-300/30'
-        >
-          postgreSQL
-        </Marquee>
-        <Marquee direction='left' className='text-karry-200 '>
+        </Row>
+        <Row x={xRight} className='text-lavender-300'>
           node.js
-        </Marquee>
-        <Marquee
-          direction='right'
-          className='text-brightGray-900 bg-shark-950/50'
-        >
-          python
-        </Marquee>
+        </Row>
+        <Row x={xLeft} className='text-seashellPeach-50'>
+          node.js
+        </Row>
       </div>
     </div>
   );
