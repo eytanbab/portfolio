@@ -3,7 +3,7 @@ import { projectProps } from './data';
 import { motion } from 'framer-motion';
 
 const container = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 0.8 },
   show: {
     opacity: 1,
     transition: {
@@ -13,7 +13,7 @@ const container = {
   },
 };
 const item = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0.8, y: 20 },
   show: {
     opacity: 1,
     y: 0,
