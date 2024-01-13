@@ -1,17 +1,46 @@
 import { Code, EyeIcon } from 'lucide-react';
 import { projectProps } from './data';
+import { motion } from 'framer-motion';
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.5,
+      type: 'tween',
+    },
+  },
+};
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delayChildren: 0.5,
+      type: 'tween',
+    },
+  },
+};
 
 const Project = ({ project }: { project: projectProps }) => {
   return (
-    <div className='flex flex-col w-96 h-60 p-2 bg-shark-950 rounded-lg gap-1 relative overflow-hidden xl:w-[36rem] xl:h-80'>
-      <div>
+    <motion.div
+      variants={container}
+      initial='hidden'
+      whileInView='show'
+      transition={{ staggerChildren: 1, delayChildren: 1 }}
+      className='flex flex-col w-96 h-60 p-2 bg-shark-950 rounded-lg gap-1 relative overflow-hidden xl:w-[36rem] xl:h-80'
+    >
+      <motion.div variants={item} initial='hidden' whileInView='show'>
         <h1 className='text-flesh-200 uppercase text-xl font-extrabold xl:text-3xl'>
           {project.projectName}
         </h1>
         <p className='text-xs font-extralight w-60 xl:w-80 xl:text-base'>
           {project.projectDesc}
         </p>
-      </div>
+      </motion.div>
       <p className='text-xs font-extralight italic text-lavender-300 line-through	'>
         Totally not generated with chatGPT
       </p>
@@ -46,7 +75,7 @@ const Project = ({ project }: { project: projectProps }) => {
         src={project.projectImagePath}
         className='absolute w-32 drop-shadow-md -right-12 -rotate-6 hover:-rotate-12 duration-150 ease-in-out top-1/2 -translate-y-1/2 hover:scale-105 xl:w-48'
       />
-    </div>
+    </motion.div>
   );
 };
 
