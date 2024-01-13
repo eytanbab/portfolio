@@ -1,4 +1,4 @@
-import { Code, EyeIcon, ViewIcon } from 'lucide-react';
+import { Code, EyeIcon } from 'lucide-react';
 import { projectProps } from './data';
 
 const Project = ({ project }: { project: projectProps }) => {
