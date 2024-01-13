@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { words } from './words';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 type Props = {
   isLoading: (a: boolean) => void;
