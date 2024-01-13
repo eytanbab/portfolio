@@ -1,3 +1,4 @@
+import { Code, EyeIcon, ViewIcon } from 'lucide-react';
 import { projectProps } from './data';
 
 const Project = ({ project }: { project: projectProps }) => {
@@ -15,18 +16,18 @@ const Project = ({ project }: { project: projectProps }) => {
         Totally not generated with chatGPT
       </p>
       <div className='flex-1 w-full flex flex-col justify-end gap-4 xl:gap-8'>
-        <div className='self-center flex gap-4 text-xs xl:text-sm'>
+        <div className='self-center flex gap-4 items-center'>
           <a
             href={project.link}
-            className='underline underline-offset-2 hover:underline-offset-4 transition-all duration-150 ease-in-out'
+            className='hover:scale-105 hover:text-flesh-200'
           >
-            Link
+            <EyeIcon />
           </a>
           <a
-            className='underline underline-offset-2 hover:underline-offset-4  transition-all duration-150 ease-in-out'
             href={project.repo}
+            className='hover:scale-105 hover:text-lavender-300'
           >
-            Github
+            <Code />
           </a>
         </div>
 
