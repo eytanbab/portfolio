@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import Projects from './components/Projects/Projects';
 import RecommendationCards from './components/RecommendationCards';
 import Loader from './components/Loader/Loader';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion, useScroll } from 'framer-motion';
 import Skills from './components/Skills/Skills';
 
 function App() {
@@ -18,16 +18,24 @@ function App() {
     useRef(null);
   const projectsRef: React.MutableRefObject<HTMLDivElement | null> | null =
     useRef(null);
+  const { scrollYProgress } = useScroll();
   return (
-    <div className='overflow-x-hidden w-full relative flex flex-col items-center'>
-      <Loader loading={loading} isLoading={isLoading} />
+    <div className='overflow-x-hidden w-full relative flex flex-col items-center overflow-hidden'>
+      <AnimatePresence>
+        {loading && <Loader isLoading={isLoading} />}
+      </AnimatePresence>
       {!loading && (
         <motion.div
-          initial={{ opacity: 0, y: 1000 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, type: 'tween' }}
-          className='oveflow-x-hidden w-full flex justify-center'
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, type: 'tween' }}
+          className=' w-full flex justify-center'
         >
+          {/* Progress line */}
+          <motion.div
+            className='bg-lavender-300 fixed w-px top-0 left-8 bottom-0 origin-top-left shadow-glow'
+            style={{ scaleY: scrollYProgress }}
+          />
           <Navbar
             aboutRef={aboutRef}
             recommendationRef={recommendationRef}

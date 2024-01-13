@@ -3,11 +3,10 @@ import { words } from './words';
 import { AnimatePresence, motion } from 'framer-motion';
 
 type Props = {
-  loading: boolean;
   isLoading: (a: boolean) => void;
 };
 
-const Loader = ({ loading, isLoading }: Props) => {
+const Loader = ({ isLoading }: Props) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const wordVariantRef = useRef<HTMLDivElement>(null);
   const [isLastWordDelay, setIsLastWordDelay] = useState(false);
@@ -17,7 +16,7 @@ const Loader = ({ loading, isLoading }: Props) => {
     if (currentWordIndex !== words.length - 1) {
       intervalId = setInterval(() => {
         setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-      }, 500 - currentWordIndex * 25); // Adjust initial speed and acceleration
+      }, 400 - currentWordIndex * 25); // Adjust initial speed and acceleration
     }
 
     if (currentWordIndex === words.length - 1) {
@@ -34,20 +33,17 @@ const Loader = ({ loading, isLoading }: Props) => {
   }, [words, currentWordIndex, isLastWordDelay]);
 
   return (
-    <AnimatePresence>
-      {loading && (
-        <motion.div
-          key='loader'
-          ref={wordVariantRef}
-          initial={{ opacity: 1, y: 0 }} // Start slightly above for smoother entry
-          exit={{ opacity: 0, y: -1000 }}
-          transition={{ duration: 0.5, type: 'tween' }}
-          className='items-center justify-center h-screen w-full text-3xl md:text-5xl uppercase flex font-black text-seashellPeach-50 lg:text-7xl xl:text-9xl bg-woodsmoke-950/50'
-        >
-          {words[currentWordIndex]}
-        </motion.div>
-      )}
-    </AnimatePresence>
+    <motion.div
+      key='loader'
+      ref={wordVariantRef}
+      initial={{ opacity: 1, y: 0 }} // Start slightly above for smoother entry
+      exit={{ opacity: 0, y: -1000 }}
+      transition={{ duration: 0.5, type: 'tween' }}
+      className='items-center justify-center h-screen w-full text-3xl md:text-5xl uppercase flex font-black text-seashellPeach-50 lg:text-7xl xl:text-9xl bg-woodsmoke-950/50'
+    >
+      {words[currentWordIndex]}
+    </motion.div>
   );
 };
+
 export default Loader;

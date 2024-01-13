@@ -3,6 +3,9 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      boxShadow: {
+        glow: '0  0 4px 1px rgba(250, 171, 252, 0.5)',
+      },
       colors: {
         hoki: {
           500: '#668499',
