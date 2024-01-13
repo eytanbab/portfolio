@@ -1,5 +1,4 @@
 import { useState, useRef } from 'react';
-import './App.css';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import Projects from './components/Projects/Projects';
