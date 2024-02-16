@@ -5,13 +5,22 @@ import { Mail } from 'lucide-react';
 const Contact = () => {
   return (
     <div className='w-full  text-seashellPeach-50 flex gap-8 items-center mt-4 justify-center lg:justify-start lg:ml-1'>
-      <a href='https://github.com/eytanbab'>
+      <a
+        className='hover:text-seashellPeach-50/85'
+        href='https://github.com/eytanbab'
+      >
         <Github className='size-8' />
       </a>
-      <a href='https://www.linkedin.com/in/ethan-babaev/'>
+      <a
+        className='hover:text-seashellPeach-50/85'
+        href='https://www.linkedin.com/in/ethan-babaev/'
+      >
         <Linkedin className='size-8' />
       </a>
-      <a href='mailto:ethan.babaev@gmail.com'>
+      <a
+        className='hover:text-seashellPeach-50/85'
+        href='mailto:ethan.babaev@gmail.com'
+      >
         <Mail className='size-8' />
       </a>
       <a
