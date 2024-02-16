@@ -14,9 +14,12 @@ const Contact = () => {
       <a href='mailto:ethan.babaev@gmail.com'>
         <Mail className='size-8' />
       </a>
-      <button className='px-4 py-1 border-2 border-seashellPeach-50 rounded-full hover:text-seashellPeach-50/85 hover:border-seashellPeach-50/85'>
+      <a
+        href='https://drive.google.com/file/d/1QIA-G6RErOYYj4Y_zpkTwKR8E-2T0LOR/view'
+        className='px-4 py-1 border-2 border-seashellPeach-50 rounded-full hover:text-seashellPeach-50/85 hover:border-seashellPeach-50/85'
+      >
         Resume
-      </button>
+      </a>
     </div>
   );
 };
