@@ -14,7 +14,7 @@ const Skills = ({
     <div className='text-5xl uppercase min-h-screen snap-start font-black lg:text-7xl w-full flex items-center'>
       <div
         ref={skillsRef}
-        className='flex flex-col gap-4 text-left  relative items-center justify-center'
+        className='flex flex-col gap-4 text-left relative items-center justify-center'
       >
         <Row x={xRight} className='text-seashellPeach-50 '>
           React
@@ -32,7 +32,7 @@ const Skills = ({
           node.js
         </Row>
         <Row x={xLeft} className='text-seashellPeach-50'>
-          node.js
+          PostgreSQL
         </Row>
       </div>
     </div>
