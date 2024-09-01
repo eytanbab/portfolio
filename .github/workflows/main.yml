@@ -17,4 +17,5 @@ jobs:
           server: ftp.ethanbabaev.dev
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: /public_html/dist/
           server-dir: /public_html/
