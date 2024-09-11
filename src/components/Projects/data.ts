@@ -10,6 +10,16 @@ export type projectProps = {
 
 export const data: projectProps[] = [
   {
+    projectId: 0,
+    projectName: 'Finance Tracker',
+    projectDesc:
+      'Stay on top of your finances with our intuitive finance tracker app. Monitor and manage your income and expenses effortlessly with customizable charts, secure bank connections, and powerful features.',
+    techUsed: ['Nextjs', 'Tailwind CSS', 'Hono', 'PostreSQL'],
+    projectImagePath: '/mobile_images/finance_mobile.png',
+    link: 'https://finance-tracker-eight-indol.vercel.app/',
+    repo: 'https://github.com/eytanbab/react/tree/master/dictionary-web-app',
+  },
+  {
     projectId: 1,
     projectName: 'Defino',
     projectDesc:
