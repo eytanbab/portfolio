@@ -60,7 +60,7 @@ const Project = ({ project }: { project: projectProps }) => {
           </a>
         </div>
 
-        <ul className='flex justify-center bg-red-500 gap-2 z-10 w-full'>
+        <ul className='flex justify-center gap-2 z-10 w-full'>
           {project.techUsed.map((tech) => (
             <li
               key={tech}
