@@ -60,11 +60,11 @@ const Project = ({ project }: { project: projectProps }) => {
           </a>
         </div>
 
-        <ul className='flex gap-4 self-center z-10'>
+        <ul className='flex justify-center bg-red-500 gap-2 z-10 w-full'>
           {project.techUsed.map((tech) => (
             <li
               key={tech}
-              className='bg-brightGray-900 px-3 py-1 rounded-full text-xs font-light uppercase'
+              className='bg-brightGray-900 px-3 py-1 rounded-full text-xs font-light uppercase flex items-center text-center'
             >
               {tech}
             </li>
