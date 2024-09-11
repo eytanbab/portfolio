@@ -1,11 +1,7 @@
+on: push
 name: 🚀 Deploy website on push
-
-on:
-  push:
-    branches:
-      - main
 jobs:
-  deploy:
+  web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
@@ -18,5 +14,3 @@ jobs:
           server: ftp.ethanbabaev.dev
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist/
-          server-dir: /public_html/
