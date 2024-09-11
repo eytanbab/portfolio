@@ -17,7 +17,7 @@ export const data: projectProps[] = [
     techUsed: ['Nextjs', 'Tailwind CSS', 'Hono', 'PostreSQL'],
     projectImagePath: '/mobile_images/finance_mobile.png',
     link: 'https://finance-tracker-eight-indol.vercel.app/',
-    repo: 'https://github.com/eytanbab/react/tree/master/dictionary-web-app',
+    repo: 'https://github.com/eytanbab/finance-tracker',
   },
   {
     projectId: 1,
