@@ -24,7 +24,7 @@ const Contact = () => {
         <Mail className='size-8' />
       </a>
       <a
-        href='https://drive.google.com/file/d/1pf9tWPpFOkq5XYxWpuVGWl-Wb8sSwgyC/view?usp=sharing'
+        href='https://drive.google.com/file/d/1wUKnKNB1yXVnKdZs5ADb06Rg4RJznhbe/view?usp=sharing'
         className='px-4 py-1 border-2 border-seashellPeach-50 rounded-full hover:text-seashellPeach-50/85 hover:border-seashellPeach-50/85'
       >
         Resume
