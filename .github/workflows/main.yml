@@ -14,10 +14,6 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
 
-      # Build the project (if needed)
-      - name: 🔨 Build project
-        run: npm run build # Run your build command if applicable
-
       # Sync files from the dist folder to the FTP server
       - name: 📂 Upload dist/ via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
