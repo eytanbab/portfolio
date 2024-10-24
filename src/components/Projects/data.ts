@@ -17,7 +17,7 @@ export const data: projectProps[] = [
     techUsed: ['React', 'Tailwind CSS', 'Supabase'],
     projectImagePath: '/mobile_images/markdown_editor.png',
     link: 'https://7wells-markdown-editor.netlify.app/',
-    repo: 'hhttps://github.com/eytanbab/react/tree/master/markdown-editor',
+    repo: 'https://github.com/eytanbab/react/tree/master/markdown-editor',
   },
   {
     projectId: 1,
