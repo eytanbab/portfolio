@@ -18,14 +18,13 @@ const About = ({
             Greetings!
           </h1>
           <p className='text-karry-200 font-light text-base ml-1  max-w-3xl lg:max-w-xl xl:text-xl'>
-            I'm not your average code monkey. I'm an alchemist, transforming
-            lines of text into pixelated masterpieces. With a dash of HTML, a
-            sprinkle of CSS, and a generous helping of Next.js, I sculpt
-            interfaces that sing. Think user-friendly symphonies, every click
-            and scroll a harmonious note. My passion? Crafting digital
-            experiences that ignite the human connection. Websites that aren't
-            just functional, they're unforgettable. Websites that make you say
-            "wow" before you even hit enter.
+            I’m Ethan — a fullstack developer with a passion for building clean,
+            responsive web applications. I specialize in React, Vite,
+            TypeScript, and PostgreSQL, focusing on creating intuitive,
+            user-friendly interfaces. I love combining creativity with
+            problem-solving to deliver impactful digital experiences. When I’m
+            not coding, I enjoy making electronic music and exploring new tech
+            trends. Let’s connect and build something great together!
           </p>
           <p className='text-lavender-300 text-base font-light italic mt-4 ml-1 line-through max-w-3xl lg:max-w-xl w-full xl:text-lg'>
             This bio was crafted with a sprinkle of artificial intelligence.
